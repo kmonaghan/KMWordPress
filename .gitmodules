@@ -37,3 +37,6 @@
 [submodule "KMWordPress/Vendor/google-toolbox-for-mac"]
 	path = KMWordPress/Vendor/google-toolbox-for-mac
 	url = https://github.com/innerfence/google-toolbox-for-mac.git
+[submodule "KMWordPress/Vendor/DTCoreText"]
+	path = KMWordPress/Vendor/DTCoreText
+	url = https://github.com/Cocoanetics/DTCoreText.git
