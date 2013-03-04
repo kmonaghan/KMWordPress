@@ -1,0 +1,31 @@
+//
+// Prefix header for all source files of the 'KMWordPress' target in the 'KMWordPress' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef CONFIGURATION_Release
+#   define DLog(...)
+#else
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <QuartzCore/QuartzCore.h>
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import "DTCoreText.h"
+    #import "NimbusCore.h"
+    #import "NimbusPhotos.h"
+    #import "UIImageView+AFNetworking.h"
+    #import "KMWordPress.h"
+    #import "UIViewController+KMWordPress.h"
+    #import "UIView+SMFrameAdditions.h"
+    #import "KMWordPressAPIClient.h"
+    #import "GAI.h"
+#endif

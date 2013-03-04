@@ -1,0 +1,39 @@
+[submodule "KMWordPress/Vendor/AFNetworking"]
+	path = KMWordPress/Vendor/AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking.git
+[submodule "KMWordPress/Vendor/AJNotificationView"]
+	path = KMWordPress/Vendor/AJNotificationView
+	url = https://github.com/ajerez/AJNotificationView.git
+[submodule "KMWordPress/Vendor/BButton"]
+	path = KMWordPress/Vendor/BButton
+	url = https://github.com/mattlawer/BButton.git
+[submodule "KMWordPress/Vendor/GRButtons"]
+	path = KMWordPress/Vendor/GRButtons
+	url = https://github.com/goncz9/GRButtons.git
+[submodule "KMWordPress/Vendor/HTAutocompleteTextField"]
+	path = KMWordPress/Vendor/HTAutocompleteTextField
+	url = https://github.com/hoteltonight/HTAutocompleteTextField.git
+[submodule "KMWordPress/Vendor/Harpy"]
+	path = KMWordPress/Vendor/Harpy
+	url = https://github.com/ArtSabintsev/Harpy.git
+[submodule "KMWordPress/Vendor/MBProgressHUD"]
+	path = KMWordPress/Vendor/MBProgressHUD
+	url = https://github.com/jdg/MBProgressHUD.git
+[submodule "KMWordPress/Vendor/SORelativeDateTransformer"]
+	path = KMWordPress/Vendor/SORelativeDateTransformer
+	url = https://github.com/billgarrison/SORelativeDateTransformer.git
+[submodule "KMWordPress/Vendor/TTTAttributedLabel"]
+	path = KMWordPress/Vendor/TTTAttributedLabel
+	url = https://github.com/mattt/TTTAttributedLabel.git
+[submodule "KMWordPress/Vendor/YISplashScreen"]
+	path = KMWordPress/Vendor/YISplashScreen
+	url = https://github.com/inamiy/YISplashScreen.git
+[submodule "KMWordPress/Vendor/appirater"]
+	path = KMWordPress/Vendor/appirater
+	url = https://github.com/arashpayan/appirater.git
+[submodule "KMWordPress/Vendor/sspulltorefresh"]
+	path = KMWordPress/Vendor/sspulltorefresh
+	url = https://github.com/soffes/sspulltorefresh.git
+[submodule "KMWordPress/Vendor/google-toolbox-for-mac"]
+	path = KMWordPress/Vendor/google-toolbox-for-mac
+	url = https://github.com/innerfence/google-toolbox-for-mac.git
