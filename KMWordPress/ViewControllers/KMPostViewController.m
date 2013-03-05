@@ -153,13 +153,7 @@
                       forKeyPath:@"frame"
                          options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionPrior
                          context:NULL];
-/*
-    [self.view addSubview:self.webView];
-    
-    self.buttonControl.delegate = self;
-     
-    [self.buttonControl attachButtonsToView];
-*/    
+   
     self.loadNextView = [[UIView alloc] initWithFrame:CGRectMake(0, -50.0f, self.view.frame.size.width, 50.0f)];
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.loadNextView.bounds;

@@ -123,8 +123,6 @@ float const childIndent = 15.0f;
 
 - (CGFloat)requiredRowHeightInTableView:(UITableView *)tableView
 {
-    DLog(@"%@", NSStringFromCGRect(tableView.frame));
-    
 	CGFloat contentWidth = tableView.frame.size.width;
     contentWidth = 320.0f;
 	// reduce width for accessories
