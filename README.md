@@ -19,7 +19,7 @@ Open the project, compile it and you should see a feed of your posts.
 You should change the app id used by Appirater and put in your own Google Analytics tracker before you distribute it to anyone.
 
 ### Icons
-The icons used in the buttons and are from [Glyphish](http://www.glyphish.com/) so I can't distribute them.  I've left the references in for you to either drop in the Glyphish icons yourself or replace them with your own. 
+The icons used the live version of the app are from [Glyphish](http://www.glyphish.com/) so I can't distribute them.  I've replaced them with some free ones from [TWG](http://blog.twg.ca/2010/11/retina-display-icon-set/twg_retina_icons/) and [Gentleface](http://gentleface.com/free_icon_set.html) but kept the Glyphish icon names so you can drop them in if you want.
 
 ## Requirements
 
