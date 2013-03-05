@@ -85,6 +85,7 @@
 		347B2568166BAE4E0039A8D6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347B2567166BAE4E0039A8D6 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		347B256B166BAF0B0039A8D6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347B256A166BAF0B0039A8D6 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		347B256D166BB1BF0039A8D6 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 347B256C166BB1BF0039A8D6 /* FacebookSDKResources.bundle */; };
+		3488018F16E68045002238FF /* KMPullToRefreshContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3488018E16E68045002238FF /* KMPullToRefreshContentView.m */; };
 		3489FCE116B0AE31005C0795 /* SORelativeDateTransformer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3489FCDE16B0AE31005C0795 /* SORelativeDateTransformer.bundle */; };
 		3489FCE216B0AE31005C0795 /* SORelativeDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489FCE016B0AE31005C0795 /* SORelativeDateTransformer.m */; };
 		348F9B31166BAB5A00B0A244 /* KMIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348F9B30166BAB5A00B0A244 /* KMIndexViewController.m */; };
@@ -222,6 +223,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = A70F11DD148632CD009202BF;
 			remoteInfo = "Static Library";
+		};
+		3488019716E68045002238FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3477CC6F16373C50001F0AD3 /* DTCoreText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E2262DC61638331500BFDAD7;
+			remoteInfo = "Mac Framework";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -418,6 +426,8 @@
 		347B2567166BAE4E0039A8D6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		347B256A166BAF0B0039A8D6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		347B256C166BB1BF0039A8D6 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = "../facebook-ios-sdk/build/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle"; sourceTree = "<group>"; };
+		3488018D16E68045002238FF /* KMPullToRefreshContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMPullToRefreshContentView.h; path = Views/KMPullToRefreshContentView.h; sourceTree = "<group>"; };
+		3488018E16E68045002238FF /* KMPullToRefreshContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KMPullToRefreshContentView.m; path = Views/KMPullToRefreshContentView.m; sourceTree = "<group>"; };
 		3489FCDE16B0AE31005C0795 /* SORelativeDateTransformer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SORelativeDateTransformer.bundle; sourceTree = "<group>"; };
 		3489FCDF16B0AE31005C0795 /* SORelativeDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SORelativeDateTransformer.h; sourceTree = "<group>"; };
 		3489FCE016B0AE31005C0795 /* SORelativeDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SORelativeDateTransformer.m; sourceTree = "<group>"; };
@@ -748,6 +758,7 @@
 				3477CC8516373C50001F0AD3 /* UnitTest.octest */,
 				3477CC8716373C50001F0AD3 /* MacUnitTest.octest */,
 				3477CC8916373C50001F0AD3 /* libDTCoreText_no_DTFoundation.a */,
+				3488019816E68045002238FF /* DTCoreText.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1024,6 +1035,8 @@
 				34D4667D166BFA810039181E /* KMTextviewCell.h */,
 				34D4667E166BFA810039181E /* KMTextviewCell.m */,
 				34D46680166BFA980039181E /* KMTextviewCell.xib */,
+				3488018D16E68045002238FF /* KMPullToRefreshContentView.h */,
+				3488018E16E68045002238FF /* KMPullToRefreshContentView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1397,7 +1410,7 @@
 		3477CC7F16373C50001F0AD3 /* DemoApp.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = DemoApp.app;
+			path = RTDemoApp.app;
 			remoteRef = 3477CC7E16373C50001F0AD3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1434,6 +1447,13 @@
 			fileType = archive.ar;
 			path = libDTCoreText_no_DTFoundation.a;
 			remoteRef = 3477CC8816373C50001F0AD3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3488019816E68045002238FF /* DTCoreText.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DTCoreText.framework;
+			remoteRef = 3488019716E68045002238FF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1597,6 +1617,7 @@
 				3443BF3C16DA502E00F642BE /* BButton.m in Sources */,
 				3475090716E529B000DFD620 /* KMAppDelegate.m in Sources */,
 				3475090C16E529D900DFD620 /* main.m in Sources */,
+				3488018F16E68045002238FF /* KMPullToRefreshContentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

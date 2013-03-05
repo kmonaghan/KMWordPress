@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Crayons and Brown Paper. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SSPullToRefreshDefaultContentView.h"
 
-@interface KMPullToRefreshContentView : UIView
+@interface KMPullToRefreshContentView : SSPullToRefreshDefaultContentView
 
 @end

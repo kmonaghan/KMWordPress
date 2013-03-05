@@ -13,6 +13,8 @@
 #import "KMPostListViewController.h"
 #import "KMPostViewController.h"
 
+#import "KMPullToRefreshContentView.h"
+
 #import "KMPostListDataSource.h"
 
 #import "KMPostTableViewCell.h"
@@ -90,7 +92,8 @@
     self.dataSource.postViewController = self;
     
     self.pullToRefreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.tableView delegate:self];
-
+    self.pullToRefreshView.contentView = [[KMPullToRefreshContentView alloc] initWithFrame:CGRectZero];
+    
     if (self.authorId)
     {
         [self.dataSource fetchAuthorPosts:self.authorId];

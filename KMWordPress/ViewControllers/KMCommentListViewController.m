@@ -9,6 +9,8 @@
 #import "KMCreateCommentViewController.h"
 #import "KMWebViewController.h"
 
+#import "KMPullToRefreshContentView.h"
+
 #import "KMCommentListDataSource.h"
 
 #import "KMCommentTableViewCell.h"
@@ -52,6 +54,7 @@
     [self.view addSubview:self.tableView];
     
     self.pullToRefreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.tableView delegate:self];
+    self.pullToRefreshView.contentView = [[KMPullToRefreshContentView alloc] initWithFrame:CGRectZero];
     
     UINib *nib = [UINib nibWithNibName: @"KMCommentTableViewCell"  bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"KMCommentTableViewCell"];
@@ -128,7 +131,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	KMCommentTableViewCell *cell = (KMCommentTableViewCell *)[self.dataSource tableView:self.tableView cellForRowAtIndexPath:indexPath];
-    DLog(@"proper table %@", NSStringFromCGRect(tableView.frame));
+
 	return [cell requiredRowHeightInTableView:tableView];
 }
 
