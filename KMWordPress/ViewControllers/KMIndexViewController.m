@@ -94,6 +94,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated
+
 {
     [self.blogSearch resignFirstResponder];
     
@@ -101,12 +102,7 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIApplicationWillEnterForegroundNotification
-                                                  object:self];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reloadPosts)
-                                                 name:UIApplicationWillEnterForegroundNotification
-                                               object:nil];
+                                                  object:nil];
 }
 
 - (void)didReceiveMemoryWarning
