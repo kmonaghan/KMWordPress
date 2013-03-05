@@ -3,7 +3,7 @@ KMWordPress
 
 KMWordPress is an example app that uses a JSON feed produced by the [JSON API plugin](http://wordpress.org/extend/plugins/json-api/) and displays it in a reasonable manner.
 
-Currently, this example forms the basis for the [Broadsheet.ie](http://broadsheet.ie) [app](https://itunes.apple.com/ie/app/broadsheet.ie/id413093424?mt=8).  I've about [how this version is improved](http://www.karlmonaghan.com/2013/03/01/broadsheet-ie-iphone-app-2-0/) over the [previous incarnation](https://github.com/kmonaghan/Broadsheet.ie-iOS).
+Currently, this example forms the basis for the [Broadsheet.ie](http://broadsheet.ie) [app](https://itunes.apple.com/ie/app/broadsheet.ie/id413093424?mt=8).  I've blogged about [how this version has improved](http://www.karlmonaghan.com/2013/03/01/broadsheet-ie-iphone-app-2-0/) over the [previous incarnation](https://github.com/kmonaghan/Broadsheet.ie-iOS).
 
 ## Getting Started
 First you need to initialise all the submodules:
@@ -23,7 +23,7 @@ The icons used in the buttons and are from [Glyphish](http://www.glyphish.com/) 
 
 ## Requirements
 
-KMWordPress requires either [iOS 5.0](http://developer.apple.com/library/ios/#releasenotes/General/WhatsNewIniOS/Articles/iOS5.html) and above.
+KMWordPress requires [iOS 5.0](http://developer.apple.com/library/ios/#releasenotes/General/WhatsNewIniOS/Articles/iOS5.html) and above.
 
 ### ARC
 KMWordPRess uses ARC.
