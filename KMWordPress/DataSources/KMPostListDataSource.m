@@ -87,13 +87,10 @@
                                              for (NSDictionary *attributes in JSON[@"posts"])
                                              {
                                                  KMWordPressPost *post = [KMWordPressPost instanceFromDictionary:attributes];
-                                                 //[mutablePosts addObject:post];
                                                  
                                                  [blockSelf addPost:post];
                                              }
-                                             
-                                             //blockSelf.items = mutablePosts;
-                                             
+                                                                                          
                                              if (JSON[@"tag"])
                                              {
                                                  blockSelf.tag = [KMWordPressTag instanceFromDictionary:JSON[@"tag"]];
