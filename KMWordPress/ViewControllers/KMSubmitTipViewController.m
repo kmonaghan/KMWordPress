@@ -199,8 +199,6 @@
                                                                      MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.view];
                                                                      [self.view addSubview:HUD];
                                                                      
-                                                                     // The sample image is based on the work by http://www.pixelpressicons.com, http://creativecommons.org/licenses/by/2.5/ca/
-                                                                     // Make the customViews 37 by 37 pixels for best results (those are the bounds of the build-in progress indicators)
                                                                      HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"321-like.png"]];
                                                                      
                                                                      // Set custom view mode
