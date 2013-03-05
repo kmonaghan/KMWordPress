@@ -14,9 +14,10 @@
 {
     NSString *message = [error localizedDescription];
     
-    if ([error.domain isEqualToString:@"AFNetworkingErrorDomain"])
+    if (([error.domain isEqualToString:@"AFNetworkingErrorDomain"])
+        || ([error.domain isEqualToString:@"NSURLErrorDomain"]))
     {
-        message = @"Check your network connection, or Broadsheet.ie is down.";
+        message = @"Check your network connection, or Broadsheet.ie is not available.";
     }
     
     [AJNotificationView showNoticeInView:self.view
