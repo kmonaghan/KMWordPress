@@ -22,9 +22,6 @@
 @property (nonatomic, strong) UISearchBar *blogSearch;
 @property (nonatomic, strong) UIView *menuView;
 
-@property (nonatomic, strong) UIPanGestureRecognizer *showMenuGesture;
-@property (nonatomic, strong) UIPanGestureRecognizer *hideMenuGesture;
-
 @property (nonatomic, assign) CGPoint startLocation;
 
 @property (nonatomic, assign) BOOL menuDisplayed;
@@ -77,11 +74,6 @@
     self.tableView.contentOffset = CGPointMake(0, 44.0f);
     
     self.tableView.delegate = self;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reloadPosts)
-                                                 name:UIApplicationWillEnterForegroundNotification
-                                               object:nil];
 
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"broadsheet_black.png"]];
 }
@@ -93,7 +85,12 @@
     if ((CGPointEqualToPoint(self.tableView.contentOffset, CGPointZero)) || (self.tableView.contentOffset.y <= 44.0f))
     {
         self.tableView.contentOffset = CGPointMake(0, 44.0f);
-    } 
+    }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadPosts)
+                                                 name:UIApplicationWillEnterForegroundNotification
+                                               object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -101,6 +98,15 @@
     [self.blogSearch resignFirstResponder];
     
     [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIApplicationWillEnterForegroundNotification
+                                                  object:self];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadPosts)
+                                                 name:UIApplicationWillEnterForegroundNotification
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -145,8 +151,6 @@
 {
     if (!more)
     {
-        [self hideMenu:nil];
-    
         [self.blogSearch resignFirstResponder];
     }
     
@@ -235,62 +239,6 @@
         
         self.startLocation = CGPointZero;
     }
-}
-
-- (void)hideMenu:(UIGestureRecognizer *)sender
-{
-    if (self.menuDisplayed)
-    {
-        self.menuDisplayed = NO;
-        CGRect tableFrame = self.tableView.frame;
-        tableFrame.size.height += 50.f;
-        
-        CGRect menuFrame = self.menuView.frame;
-        menuFrame.origin.y += 50.f;
-        
-        [UIView animateWithDuration:0.3f animations:^() {
-            self.menuView.frame = menuFrame;
-            
-            self.tableView.frame = tableFrame;
-        }];
-    }
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
-    
-    /*
-    KMWordPressPost *post = self.dataSource.items[indexPath.row];
-    
-    if ([post isPhotogallery])
-    {
-        NetworkPhotoAlbumViewController *detailViewController = [[NetworkPhotoAlbumViewController alloc] initWithPost:post];
-        [self.navigationController pushViewController:detailViewController animated:YES];
-    }
-    else
-     */
-    {
-        [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-    }
-}
-
-- (void)home
-{
-    [self.dataSource fetchRecentPosts];
-    [self loadPosts:NO];
-}
-
-- (void)galleries
-{
-    [self.dataSource fetchCategory:@18];
-    [self loadPosts:NO];
-}
-
-- (void)video
-{
-    [self.dataSource fetchCategory:@3061];
-    [self loadPosts:NO];
 }
 
 #pragma mark - UIScrollViewDelegate
