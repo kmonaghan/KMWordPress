@@ -26,6 +26,7 @@
 		3434184416CC488F008646C7 /* KMSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3434184216CC488F008646C7 /* KMSettingsViewController.xib */; };
 		3434184716CC5423008646C7 /* KMSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3434184616CC5423008646C7 /* KMSwitchCell.m */; };
 		3434184916CC5446008646C7 /* KMSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3434184816CC5446008646C7 /* KMSwitchCell.xib */; };
+		3434623916E7D9340051E557 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 343461C316E7D9340051E557 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3436387916B88C64009DA634 /* UIView+SMFrameAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436387816B88C64009DA634 /* UIView+SMFrameAdditions.m */; };
 		3439727616AC908C00D5C1D3 /* libraries.html in Resources */ = {isa = PBXBuildFile; fileRef = 3439727516AC908C00D5C1D3 /* libraries.html */; };
 		3443BF3B16DA502E00F642BE /* BButton+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 3443BF3816DA502E00F642BE /* BButton+FontAwesome.m */; };
@@ -292,6 +293,8 @@
 		3434184516CC5423008646C7 /* KMSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMSwitchCell.h; path = Views/KMSwitchCell.h; sourceTree = "<group>"; };
 		3434184616CC5423008646C7 /* KMSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KMSwitchCell.m; path = Views/KMSwitchCell.m; sourceTree = "<group>"; };
 		3434184816CC5446008646C7 /* KMSwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KMSwitchCell.xib; path = Views/KMSwitchCell.xib; sourceTree = "<group>"; };
+		343461C216E7D9340051E557 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		343461C316E7D9340051E557 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		3436387716B88C64009DA634 /* UIView+SMFrameAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SMFrameAdditions.h"; sourceTree = "<group>"; };
 		3436387816B88C64009DA634 /* UIView+SMFrameAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SMFrameAdditions.m"; sourceTree = "<group>"; };
 		3439727516AC908C00D5C1D3 /* libraries.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = libraries.html; sourceTree = "<group>"; };
@@ -695,6 +698,16 @@
 			path = Vendor/TTTAttributedLabel/TTTAttributedLabel;
 			sourceTree = "<group>";
 		};
+		3434616F16E7D9340051E557 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				343461C216E7D9340051E557 /* GTMNSString+HTML.h */,
+				343461C316E7D9340051E557 /* GTMNSString+HTML.m */,
+			);
+			name = Foundation;
+			path = "KMWordPress/Vendor/google-toolbox-for-mac/Foundation";
+			sourceTree = SOURCE_ROOT;
+		};
 		3436387616B88C64009DA634 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,6 +773,7 @@
 			isa = PBXGroup;
 			children = (
 				3460D1E416D95239009657C9 /* GTMDefines.h */,
+				3434616F16E7D9340051E557 /* Foundation */,
 				3460D1EA16D9523A009657C9 /* iPhone */,
 			);
 			name = "google-toolbox-for-mac";
@@ -1097,6 +1111,8 @@
 			children = (
 				34D57191167FCF74002B7B2B /* KMWordPressPostControl.h */,
 				34D57192167FCF74002B7B2B /* KMWordPressPostControl.m */,
+				34FFD58216A33BA200F106FB /* KMWordPress.h */,
+				34FFD58316A33BA200F106FB /* KMWordPress.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1116,8 +1132,6 @@
 			children = (
 				34E0174116341A2F001E8454 /* KMWordPressAPIClient.h */,
 				34E0174216341A2F001E8454 /* KMWordPressAPIClient.m */,
-				34FFD58216A33BA200F106FB /* KMWordPress.h */,
-				34FFD58316A33BA200F106FB /* KMWordPress.m */,
 			);
 			name = "Networking Extensions";
 			sourceTree = "<group>";
@@ -1670,6 +1684,7 @@
 				3475090716E529B000DFD620 /* KMAppDelegate.m in Sources */,
 				3475090C16E529D900DFD620 /* main.m in Sources */,
 				3488018F16E68045002238FF /* KMPullToRefreshContentView.m in Sources */,
+				3434623916E7D9340051E557 /* GTMNSString+HTML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

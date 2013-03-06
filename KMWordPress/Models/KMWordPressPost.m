@@ -5,6 +5,7 @@
 //  Created by Karl Monaghan on 30/09/2012.
 //  Copyright (c) 2012 Crayons and Brown Paper. All rights reserved.
 //
+#import "GTMNSString+HTML.h"
 
 #import "SORelativeDateTransformer.h"
 
@@ -49,7 +50,9 @@ static SORelativeDateTransformer *sRelativetDateFormatter = nil;
 - (void)setValue:(id)value forKey:(NSString *)key
 {
     
-    if ([key isEqualToString:@"attachments"]) {
+    if ([key isEqualToString:@"title"]) {
+        self.title = [value gtm_stringByUnescapingFromHTML];
+    } else if ([key isEqualToString:@"attachments"]) {
         
         if ([value isKindOfClass:[NSArray class]])
         {
@@ -160,7 +163,7 @@ static SORelativeDateTransformer *sRelativetDateFormatter = nil;
     } else if ([key isEqualToString:@"id"]) {
         [self setValue:value forKey:@"kMWordPressPostId"];
     } else if ([key isEqualToString:@"title_plain"]) {
-        [self setValue:value forKey:@"titlePlain"];
+        [self setValue:[value gtm_stringByUnescapingFromHTML] forKey:@"titlePlain"];
     } else if ([key isEqualToString:@"next_url"]) {
         [self setValue:value forKey:@"nextUrl"];
     } else if ([key isEqualToString:@"previous_url"]) {
