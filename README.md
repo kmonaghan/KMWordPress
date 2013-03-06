@@ -1,13 +1,17 @@
 KMWordPress
 ===========
 
-KMWordPress is an example app that uses a JSON feed produced by the [JSON API plugin](http://wordpress.org/extend/plugins/json-api/) and displays it in a reasonable manner.
+KMWordPress is an example app that uses a JSON feed produced by the [JSON API plugin](http://wordpress.org/extend/plugins/json-api/) (you'll need to use my [fork](https://github.com/kmonaghan/wp-json-api) though) and displays it in a reasonable manner.
 
 Currently, this example forms the basis for the [Broadsheet.ie](http://broadsheet.ie) [app](https://itunes.apple.com/ie/app/broadsheet.ie/id413093424?mt=8).  I've blogged about [how this version has improved](http://www.karlmonaghan.com/2013/03/01/broadsheet-ie-iphone-app-2-0/) over the [previous incarnation](https://github.com/kmonaghan/Broadsheet.ie-iOS).
 
 ## Getting Started
 First you need to initialise all the submodules:
-    $ git submodule update --init --recursive
+```
+$ git submodule update --init --recursive
+```
+
+You'll also need the [Facebook SDK](https://github.com/facebook/facebook-ios-sdk) in the same folder you've cloned this project too (or manually change all the paths).
 
 In [KMWordPressAPIClient.m](KMWordPress/blob/master/KMWordPress/Classes/KMWordPressAPIClient.m#L15) you need to change the base URL:
 ``` objective-c
@@ -26,9 +30,9 @@ The icons used the live version of the app are from [Glyphish](http://www.glyphi
 KMWordPress requires [iOS 5.0](http://developer.apple.com/library/ios/#releasenotes/General/WhatsNewIniOS/Articles/iOS5.html) and above.
 
 ### ARC
-KMWordPRess uses ARC.
+KMWordPress uses ARC.
 
-### Creator
+## Creator
 
 [Karl Monaghan](http://github.com/kmonaghan)  
 [@karlmonaghan](https://twitter.com/karlmonaghan)
