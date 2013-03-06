@@ -27,6 +27,10 @@
 		3434184716CC5423008646C7 /* KMSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3434184616CC5423008646C7 /* KMSwitchCell.m */; };
 		3434184916CC5446008646C7 /* KMSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3434184816CC5446008646C7 /* KMSwitchCell.xib */; };
 		3434623916E7D9340051E557 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 343461C316E7D9340051E557 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3434628716E807170051E557 /* KMCommentHelpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3434628416E807170051E557 /* KMCommentHelpView.xib */; };
+		3434628816E807170051E557 /* KMCommentHelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3434628616E807170051E557 /* KMCommentHelpView.m */; };
+		3434629216E807400051E557 /* 09-chat-2-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 3434629016E807400051E557 /* 09-chat-2-white.png */; };
+		3434629316E807400051E557 /* 09-chat-2-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3434629116E807400051E557 /* 09-chat-2-white@2x.png */; };
 		3436387916B88C64009DA634 /* UIView+SMFrameAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436387816B88C64009DA634 /* UIView+SMFrameAdditions.m */; };
 		3439727616AC908C00D5C1D3 /* libraries.html in Resources */ = {isa = PBXBuildFile; fileRef = 3439727516AC908C00D5C1D3 /* libraries.html */; };
 		3443BF3B16DA502E00F642BE /* BButton+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 3443BF3816DA502E00F642BE /* BButton+FontAwesome.m */; };
@@ -295,6 +299,11 @@
 		3434184816CC5446008646C7 /* KMSwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KMSwitchCell.xib; path = Views/KMSwitchCell.xib; sourceTree = "<group>"; };
 		343461C216E7D9340051E557 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
 		343461C316E7D9340051E557 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		3434628416E807170051E557 /* KMCommentHelpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KMCommentHelpView.xib; path = Views/KMCommentHelpView.xib; sourceTree = "<group>"; };
+		3434628516E807170051E557 /* KMCommentHelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMCommentHelpView.h; path = Views/KMCommentHelpView.h; sourceTree = "<group>"; };
+		3434628616E807170051E557 /* KMCommentHelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KMCommentHelpView.m; path = Views/KMCommentHelpView.m; sourceTree = "<group>"; };
+		3434629016E807400051E557 /* 09-chat-2-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "09-chat-2-white.png"; path = "KMWordPress/images/09-chat-2-white.png"; sourceTree = SOURCE_ROOT; };
+		3434629116E807400051E557 /* 09-chat-2-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "09-chat-2-white@2x.png"; path = "KMWordPress/images/09-chat-2-white@2x.png"; sourceTree = SOURCE_ROOT; };
 		3436387716B88C64009DA634 /* UIView+SMFrameAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SMFrameAdditions.h"; sourceTree = "<group>"; };
 		3436387816B88C64009DA634 /* UIView+SMFrameAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SMFrameAdditions.m"; sourceTree = "<group>"; };
 		3439727516AC908C00D5C1D3 /* libraries.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = libraries.html; sourceTree = "<group>"; };
@@ -1048,6 +1057,9 @@
 		3496731116189F6A00C5A4C7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3434628516E807170051E557 /* KMCommentHelpView.h */,
+				3434628616E807170051E557 /* KMCommentHelpView.m */,
+				3434628416E807170051E557 /* KMCommentHelpView.xib */,
 				34FD06291640904F00AB9041 /* KMCommentTableViewCell.h */,
 				34FD062A1640904F00AB9041 /* KMCommentTableViewCell.m */,
 				34FD062C1640905B00AB9041 /* KMCommentTableViewCell.xib */,
@@ -1063,6 +1075,8 @@
 				349673121618A02400C5A4C7 /* KMPostTableViewCell.h */,
 				349673131618A02400C5A4C7 /* KMPostTableViewCell.m */,
 				34FD059516406EFE00AB9041 /* KMPostTableViewCell.xib */,
+				3488018D16E68045002238FF /* KMPullToRefreshContentView.h */,
+				3488018E16E68045002238FF /* KMPullToRefreshContentView.m */,
 				3427F18416CEFB7800871803 /* KMSliderCell.h */,
 				3427F18516CEFB7800871803 /* KMSliderCell.m */,
 				3427F18D16CEFB9300871803 /* KMSliderCell.xib */,
@@ -1075,8 +1089,6 @@
 				34D4667D166BFA810039181E /* KMTextviewCell.h */,
 				34D4667E166BFA810039181E /* KMTextviewCell.m */,
 				34D46680166BFA980039181E /* KMTextviewCell.xib */,
-				3488018D16E68045002238FF /* KMPullToRefreshContentView.h */,
-				3488018E16E68045002238FF /* KMPullToRefreshContentView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1189,6 +1201,8 @@
 		34E95D471671487800F320BA /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3434629016E807400051E557 /* 09-chat-2-white.png */,
+				3434629116E807400051E557 /* 09-chat-2-white@2x.png */,
 				3475093816E5342C00DFD620 /* 09-chat-2.png */,
 				34E2ABE716E69E4C008587AA /* 09-chat-2@2x.png */,
 				34E2ABF016E69E4C008587AA /* 211-action-grey.png */,
@@ -1577,6 +1591,9 @@
 				34E2AC2216E69E4C008587AA /* 339-exit-fullscreen@2x.png in Resources */,
 				34E2AC2316E69E4C008587AA /* reload.png in Resources */,
 				34E2AC2416E69E4C008587AA /* reload@2x.png in Resources */,
+				3434628716E807170051E557 /* KMCommentHelpView.xib in Resources */,
+				3434629216E807400051E557 /* 09-chat-2-white.png in Resources */,
+				3434629316E807400051E557 /* 09-chat-2-white@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1685,6 +1702,7 @@
 				3475090C16E529D900DFD620 /* main.m in Sources */,
 				3488018F16E68045002238FF /* KMPullToRefreshContentView.m in Sources */,
 				3434623916E7D9340051E557 /* GTMNSString+HTML.m in Sources */,
+				3434628816E807170051E557 /* KMCommentHelpView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
