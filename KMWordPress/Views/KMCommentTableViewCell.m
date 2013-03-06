@@ -101,6 +101,8 @@ float const childIndent = 15.0f;
 {
 	[super layoutSubviews];
 	
+    CGFloat allowedContentSize = self.contentView.$width - 20.0f;
+    
     CGFloat offset = ([self.comment.parent intValue]) ? childIndent : 0;
     
     offset = (self.comment.childLevel == 1) ? offset : offset * 2;
@@ -110,9 +112,9 @@ float const childIndent = 15.0f;
     self.commentDate.frame = CGRectMake(60.0f + offset, 29.0f, 210.0f - offset, 21.0f);
     
 	//CGFloat neededContentHeight = [self requiredRowHeightInTableView:(UITableView *)self.superview];
-	CGSize neededSize = [self.commentBody suggestedFrameSizeToFitEntireStringConstraintedToWidth:300.0f - offset];
+	CGSize neededSize = [self.commentBody suggestedFrameSizeToFitEntireStringConstraintedToWidth:allowedContentSize - offset];
 	// after the first call here the content view size is correct
-	CGRect frame = CGRectMake(10.0f + offset, 58.0f, 300.0f - offset, neededSize.height);
+	CGRect frame = CGRectMake(10.0f + offset, 58.0f, allowedContentSize - offset, neededSize.height);
 	
 	if ((self.commentBody.frame.size.height != frame.size.height)
         || (self.commentBody.frame.size.width != frame.size.width))
@@ -124,7 +126,7 @@ float const childIndent = 15.0f;
 - (CGFloat)requiredRowHeightInTableView:(UITableView *)tableView
 {
 	CGFloat contentWidth = tableView.frame.size.width;
-    contentWidth = 320.0f;
+
 	// reduce width for accessories
 	switch (self.accessoryType)
 	{
