@@ -13,8 +13,10 @@
 #import "KMWebViewController.h"
 #import "KMPostListViewController.h"
 #import "NetworkPhotoAlbumViewController.h"
+#import "KMCommentListViewController.h"
 
 #import "KMPostHelpView.h"
+#import "KMCommentHelpView.h"
 
 #import "KMWordPressPostControl.h"
 
@@ -37,6 +39,7 @@
 
 @property (assign, nonatomic) CGFloat fontSize;
 
+@property (strong, nonatomic) UIBarButtonItem *makeCommentButton;
 @end
 
 @implementation KMPostViewController
@@ -260,6 +263,10 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"helpShown"];
     }
 
+    self.makeCommentButton =  [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"09-chat-2-white.png"]
+                                                               style:UIBarButtonItemStyleBordered
+                                                              target:self
+                                                              action:@selector(showCommentHelp)];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -284,6 +291,32 @@
 -(BOOL)shouldAutorotate
 {
     return NO;
+}
+
+- (void)showCommentHelp
+{
+    NSInteger buttonTaps = [[NSUserDefaults standardUserDefaults] integerForKey:@"commentButtonTaps"];
+    
+    buttonTaps++;
+    
+    if ((buttonTaps > 10) && (![[NSUserDefaults standardUserDefaults] boolForKey:@"commentHelpShown"]))
+    {
+        KMCommentHelpView *help = [KMCommentHelpView viewFromNib];
+        
+        help.$height = self.view.$height;
+        
+        help.buttonControl = self.buttonControl;
+        
+        [self.view addSubview:help];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"commentHelpShown"];
+    }
+    else
+    {
+        [self.buttonControl viewComments];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:buttonTaps forKey:@"commentButtonTaps"];
 }
 
 - (BOOL)canLoadNext
@@ -458,7 +491,10 @@
             vc = [[KMPostListViewController alloc] initWithTagId:[[request URL] port]];
         }
         
-        [self.navigationController pushViewController:vc animated:YES];
+        if (vc)
+        {
+            [self.navigationController pushViewController:vc animated:YES];
+        }
         
         return NO;
     }
@@ -503,6 +539,8 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
+    self.navigationItem.rightBarButtonItem = ([self.post.commentCount intValue]) ? self.makeCommentButton : nil;
+    
     if ([self canLoadNext])
     {
         self.nextTitleLabel.text = [((KMWordPressPost *)self.dataSource.items[(self.index - 1)]).titlePlain stringByReplacingHTMLEntities];
@@ -531,7 +569,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-
+    
 }
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -584,13 +622,6 @@
 - (void)pinchAction:(UIPinchGestureRecognizer *)gestureRecognizer
 {
     CGFloat pinchScale = gestureRecognizer.scale;
-    
-    DLog(@"pinchScale b: %f", pinchScale);
-    /*
-    pinchScale = round(pinchScale * 1000) / 1000.0;
-    
-    DLog(@"pinchScale a: %f", pinchScale);
-    */
     
     if (pinchScale < 1)
     {

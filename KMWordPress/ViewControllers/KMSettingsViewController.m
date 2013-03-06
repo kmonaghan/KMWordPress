@@ -118,6 +118,7 @@
     KMSwitchCell *cell = (KMSwitchCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0 ]];
     [defaults setBool:!cell.itemSwitch.on forKey:@"helpShown"];
     [defaults setBool:!cell.itemSwitch.on forKey:@"fullscreenHelpShown"];
+    [defaults setBool:!cell.itemSwitch.on forKey:@"commentHelpShown"];
     
     if ([self.name.text length])
     {
