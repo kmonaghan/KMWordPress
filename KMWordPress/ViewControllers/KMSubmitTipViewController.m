@@ -96,7 +96,7 @@
 {
     [super viewWillDisappear:animated];
     
-    [[KMWordPressAPIClient sharedClient] cancelAllHTTPOperationsWithMethod:@"POST" path:@"/iphone_tip_2.php"];
+    [[KMWordPressAPIClient sharedClient] cancelAllHTTPOperationsWithMethod:@"POST" path:@"/iphone_tip.php"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -176,7 +176,7 @@
     DLog(@"hud: %@", hud);
     
     NSMutableURLRequest *afRequest = [[KMWordPressAPIClient sharedClient] multipartFormRequestWithMethod:@"POST"
-                                                                                                    path:@"/iphone_tip_2.php"
+                                                                                                    path:@"/iphone_tip.php"
                                                                                               parameters:@{@"name" : self.name.text, @"email" : self.email.text, @"message" : self.message.text}
                                                                                constructingBodyWithBlock:^(id <AFMultipartFormData>formData)
                                       {
