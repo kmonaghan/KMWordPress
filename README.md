@@ -1,7 +1,7 @@
 KMWordPress
 ===========
 
-KMWordPress is an example app that uses a JSON feed produced by the [JSON API plugin](http://wordpress.org/extend/plugins/json-api/) (you'll need to use my [fork](https://github.com/kmonaghan/wp-json-api) though) and displays it in a reasonable manner.
+KMWordPress is an example iOS app that uses a JSON feed produced by the [JSON API plugin](http://wordpress.org/extend/plugins/json-api/) (you'll need to use my [fork](https://github.com/kmonaghan/wp-json-api) though) and displays it in a reasonable manner.
 
 Currently, this example forms the basis for the [Broadsheet.ie](http://broadsheet.ie) [app](https://itunes.apple.com/ie/app/broadsheet.ie/id413093424?mt=8).  I've blogged about [how this version has improved](http://www.karlmonaghan.com/2013/03/01/broadsheet-ie-iphone-app-2-0/) over the [previous incarnation](https://github.com/kmonaghan/Broadsheet.ie-iOS).
 
