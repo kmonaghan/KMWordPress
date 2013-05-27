@@ -26,6 +26,8 @@
 @property (strong, nonatomic) UIImagePickerController *picker;
 @property (strong, nonatomic) UIImage *attachment;
 @property (strong, nonatomic) UIImageView *attachmentView;
+
+@property (assign, nonatomic) BOOL askAboutAttachment;
 @end
 
 @implementation KMSubmitTipViewController
@@ -71,6 +73,10 @@
 {
     [super viewDidLoad];
 
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.name.text = [defaults objectForKey:@"comment_name"];
+    self.email.text = [defaults objectForKey:@"comment_email"];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -168,6 +174,19 @@
         return;
     }
     
+    if (!self.askAboutAttachment && !self.attachment)
+    {
+        [[[UIAlertView alloc] initWithTitle:@"No Photo?"
+                                    message:@"You've not attached a photo and we love pictures. Are you sure you want to submit without one?"
+                                   delegate:self
+                          cancelButtonTitle:@"Send Tip"
+                          otherButtonTitles:@"Attach Photo", nil] show];
+        
+        self.askAboutAttachment = YES;
+        
+        return;
+    }
+    
     [self.view endEditing:YES];
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -209,6 +228,13 @@
                                                                      [HUD show:YES];
                                                                      [HUD hide:YES afterDelay:1];
                                                                      
+                                                                     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                                                                     
+                                                                     [defaults setObject:self.name.text forKey:@"comment_name"];
+                                                                     [defaults setObject:self.email.text forKey:@"comment_email"];
+
+                                                                     [defaults synchronize];
+                                                                     
                                                                      [blockSelf reset];
                                                                  }
                                                                           failure:^(AFHTTPRequestOperation *operation, NSError *error){
@@ -236,7 +262,7 @@
     UIView *footer = [[UIView alloc] initWithFrame:CGRectZero];
     footer.backgroundColor = [UIColor clearColor];
     
-    CGFloat offset = 0;
+    CGFloat offset = 10.0f;
     
     if (self.attachment)
     {
@@ -349,10 +375,12 @@
 
 - (void)reset
 {
-    self.name.text = nil;
-    self.email.text = nil;
+    //self.name.text = nil;
+    //self.email.text = nil;
     self.message.text = nil;
     self.attachment = nil;
+    
+    self.askAboutAttachment = NO;
     
     [self makeFooter];
 }
@@ -481,5 +509,18 @@
     }
     
     return YES;
+}
+
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (alertView.cancelButtonIndex == buttonIndex)
+    {
+        [self submit];
+    }
+    else
+    {
+        [self addPhoto];
+    }
 }
 @end
