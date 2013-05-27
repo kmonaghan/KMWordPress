@@ -638,9 +638,9 @@
     {
         self.fontSize = 16.0f;
     }
-    else if (self.fontSize >= 40.0f)
+    else if (self.fontSize >= 32.0f)
     {
-        self.fontSize = 40.0f;
+        self.fontSize = 32.0f;
     }
     
     [[NSUserDefaults standardUserDefaults] setFloat:self.fontSize forKey:@"fontsize"];
