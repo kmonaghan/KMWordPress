@@ -111,7 +111,6 @@ float const childIndent = 15.0f;
     self.username.frame = CGRectMake(60.0f + offset, 10.0f, 210.0f - offset, 21.0f);
     self.commentDate.frame = CGRectMake(60.0f + offset, 29.0f, 210.0f - offset, 21.0f);
     
-	//CGFloat neededContentHeight = [self requiredRowHeightInTableView:(UITableView *)self.superview];
 	CGSize neededSize = [self.commentBody suggestedFrameSizeToFitEntireStringConstraintedToWidth:allowedContentSize - offset];
 	// after the first call here the content view size is correct
 	CGRect frame = CGRectMake(10.0f + offset, 58.0f, allowedContentSize - offset, neededSize.height);
@@ -209,22 +208,7 @@ float const childIndent = 15.0f;
 	button.URL = URL;
 	button.minimumHitSize = CGSizeMake(25.0f, 25.0f); // adjusts it's bounds so that button is always large enough
 	button.GUID = identifier;
-	
-	// we draw the contents ourselves
-	button.attributedString = string;
-	
-	// make a version with different text color
-	NSMutableAttributedString *highlightedString = [string mutableCopy];
-	
-	NSRange range = NSMakeRange(0, highlightedString.length);
-	
-	NSDictionary *highlightedAttributes = [NSDictionary dictionaryWithObject:(__bridge id)[UIColor redColor].CGColor forKey:(id)kCTForegroundColorAttributeName];
-	
-	
-	[highlightedString addAttributes:highlightedAttributes range:range];
-	
-	button.highlightedAttributedString = highlightedString;
-	
+    
 	// use normal push action for opening URL
 	[button addTarget:self action:@selector(linkPushed:) forControlEvents:UIControlEventTouchUpInside];
 	
