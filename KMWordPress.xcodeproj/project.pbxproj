@@ -84,6 +84,7 @@
 		3477CC9216373CC3001F0AD3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3477CC9116373CC3001F0AD3 /* QuartzCore.framework */; };
 		3477CC9416373CCE001F0AD3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3477CC9316373CCE001F0AD3 /* libxml2.dylib */; };
 		3477CC9A16373F85001F0AD3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3477CC9916373F85001F0AD3 /* MobileCoreServices.framework */; };
+		347A326F174AC2AA00E76DDE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347A326E174AC2AA00E76DDE /* Security.framework */; };
 		347B2544166BAD850039A8D6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347B2543166BAD850039A8D6 /* FacebookSDK.framework */; };
 		347B2566166BAE400039A8D6 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347B2565166BAE400039A8D6 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		347B2568166BAE4E0039A8D6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347B2567166BAE4E0039A8D6 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -405,6 +406,7 @@
 		3477CC9116373CC3001F0AD3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3477CC9316373CCE001F0AD3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3477CC9916373F85001F0AD3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		347A326E174AC2AA00E76DDE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		347B2543166BAD850039A8D6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "../facebook-ios-sdk/build/FacebookSDK.framework"; sourceTree = "<group>"; };
 		347B2546166BADF40039A8D6 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
 		347B2547166BADF40039A8D6 /* FacebookSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookSDK.h; sourceTree = "<group>"; };
@@ -657,6 +659,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				347A326F174AC2AA00E76DDE /* Security.framework in Frameworks */,
 				3477CC9A16373F85001F0AD3 /* MobileCoreServices.framework in Frameworks */,
 				345500B016D8F0EF00808CAA /* StoreKit.framework in Frameworks */,
 				349A3F6516D57915007F1382 /* CoreData.framework in Frameworks */,
@@ -905,6 +908,7 @@
 				348F9B39166BACD600B0A244 /* MessageUI.framework */,
 				3477CC9916373F85001F0AD3 /* MobileCoreServices.framework */,
 				3477CC9116373CC3001F0AD3 /* QuartzCore.framework */,
+				347A326E174AC2AA00E76DDE /* Security.framework */,
 				347B256A166BAF0B0039A8D6 /* Social.framework */,
 				345500AF16D8F0EF00808CAA /* StoreKit.framework */,
 				3477CC671635F431001F0AD3 /* SystemConfiguration.framework */,
@@ -982,6 +986,9 @@
 		3496725416188DCA00C5A4C7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				348F9B33166BAB6B00B0A244 /* KMAboutViewController.h */,
+				348F9B32166BAB6B00B0A244 /* KMAboutViewController.m */,
+				348F9B34166BAB6B00B0A244 /* KMAboutViewController.xib */,
 				3477CC601635EEA6001F0AD3 /* KMCommentListViewController.h */,
 				3477CC611635EEA6001F0AD3 /* KMCommentListViewController.m */,
 				3477CC641635EF37001F0AD3 /* KMCreateCommentViewController.h */,
@@ -998,6 +1005,9 @@
 				349673071618973200C5A4C7 /* KMPostListViewController.m */,
 				349673091618974D00C5A4C7 /* KMPostViewController.h */,
 				3496730A1618974D00C5A4C7 /* KMPostViewController.m */,
+				3434184016CC488F008646C7 /* KMSettingsViewController.h */,
+				3434184116CC488F008646C7 /* KMSettingsViewController.m */,
+				3434184216CC488F008646C7 /* KMSettingsViewController.xib */,
 				34D46675166BE51E0039181E /* KMSubmitTipViewController.h */,
 				34D46676166BE51E0039181E /* KMSubmitTipViewController.m */,
 				3430996F169E1CB3007A194A /* KMViewController.h */,
@@ -1007,12 +1017,6 @@
 				34FD05E116407DC400AB9041 /* KMWebViewController.xib */,
 				34F82BB91674FF91001550AF /* NetworkPhotoAlbumViewController.h */,
 				34F82BBA1674FF91001550AF /* NetworkPhotoAlbumViewController.m */,
-				348F9B33166BAB6B00B0A244 /* KMAboutViewController.h */,
-				348F9B32166BAB6B00B0A244 /* KMAboutViewController.m */,
-				348F9B34166BAB6B00B0A244 /* KMAboutViewController.xib */,
-				3434184016CC488F008646C7 /* KMSettingsViewController.h */,
-				3434184116CC488F008646C7 /* KMSettingsViewController.m */,
-				3434184216CC488F008646C7 /* KMSettingsViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

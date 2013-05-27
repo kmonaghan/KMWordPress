@@ -351,8 +351,8 @@
     Facebook *facebook = [[Facebook alloc] initWithAppId:FBSession.activeSession.appID andDelegate:nil];
     
     // Set the session information for the Facebook instance
-    facebook.accessToken = FBSession.activeSession.accessToken;
-    facebook.expirationDate = FBSession.activeSession.expirationDate;
+    facebook.accessToken = FBSession.activeSession.accessTokenData.accessToken;
+    facebook.expirationDate = FBSession.activeSession.accessTokenData.expirationDate;
     
     // Invoke the dialog
     [facebook dialog:@"feed" andParams:params andDelegate:nil];
