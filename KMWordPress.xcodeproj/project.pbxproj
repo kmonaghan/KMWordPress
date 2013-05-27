@@ -118,8 +118,9 @@
 		349A3F6216D57898007F1382 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A3F6016D57898007F1382 /* libGoogleAnalytics.a */; };
 		349A3F6516D57915007F1382 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A3F6416D57915007F1382 /* CoreData.framework */; };
 		349A3F6816D57E7E007F1382 /* KMFullScreenHelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A3F6716D57E7E007F1382 /* KMFullScreenHelpView.m */; };
-		34A15C0116C058EB00081135 /* Harpy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A15BFF16C058EB00081135 /* Harpy.m */; };
 		34B01EDA169756DA00067F53 /* KMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B01ED9169756DA00067F53 /* KMNavigationController.m */; };
+		34C762361753ED11003DA830 /* Harpy.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34C762331753ED11003DA830 /* Harpy.bundle */; };
+		34C762371753ED11003DA830 /* Harpy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C762351753ED11003DA830 /* Harpy.m */; };
 		34D46677166BE51E0039181E /* KMSubmitTipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D46676166BE51E0039181E /* KMSubmitTipViewController.m */; };
 		34D4667A166BE5690039181E /* KMTextfieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D46679166BE5690039181E /* KMTextfieldCell.m */; };
 		34D4667F166BFA810039181E /* KMTextviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D4667E166BFA810039181E /* KMTextviewCell.m */; };
@@ -496,11 +497,11 @@
 		349A3F6416D57915007F1382 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		349A3F6616D57E7E007F1382 /* KMFullScreenHelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMFullScreenHelpView.h; path = Views/KMFullScreenHelpView.h; sourceTree = "<group>"; };
 		349A3F6716D57E7E007F1382 /* KMFullScreenHelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KMFullScreenHelpView.m; path = Views/KMFullScreenHelpView.m; sourceTree = "<group>"; };
-		34A15BFE16C058EB00081135 /* Harpy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Harpy.h; sourceTree = "<group>"; };
-		34A15BFF16C058EB00081135 /* Harpy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Harpy.m; sourceTree = "<group>"; };
-		34A15C0016C058EB00081135 /* HarpyConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HarpyConstants.h; sourceTree = "<group>"; };
 		34B01ED8169756DA00067F53 /* KMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMNavigationController.h; path = ViewControllers/KMNavigationController.h; sourceTree = "<group>"; };
 		34B01ED9169756DA00067F53 /* KMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KMNavigationController.m; path = ViewControllers/KMNavigationController.m; sourceTree = "<group>"; };
+		34C762331753ED11003DA830 /* Harpy.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Harpy.bundle; sourceTree = "<group>"; };
+		34C762341753ED11003DA830 /* Harpy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Harpy.h; sourceTree = "<group>"; };
+		34C762351753ED11003DA830 /* Harpy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Harpy.m; sourceTree = "<group>"; };
 		34D46675166BE51E0039181E /* KMSubmitTipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMSubmitTipViewController.h; path = ViewControllers/KMSubmitTipViewController.h; sourceTree = "<group>"; };
 		34D46676166BE51E0039181E /* KMSubmitTipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KMSubmitTipViewController.m; path = ViewControllers/KMSubmitTipViewController.m; sourceTree = "<group>"; };
 		34D46678166BE5690039181E /* KMTextfieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMTextfieldCell.h; path = Views/KMTextfieldCell.h; sourceTree = "<group>"; };
@@ -1033,7 +1034,7 @@
 				349A3F5A16D57898007F1382 /* Google Analytics */,
 				3460D05716D95238009657C9 /* google-toolbox-for-mac */,
 				34DAFAD41673751C00774D92 /* GRButtons */,
-				34A15BFD16C058EB00081135 /* Harpy */,
+				34C762321753ED11003DA830 /* Harpy */,
 				34516CCE16BEE6C400CA5878 /* HTAutocompleteTextField */,
 				34F60FD316AF46CB001A911C /* MBProgressHUD */,
 				34F82B591674FA12001550AF /* Nimbus */,
@@ -1111,12 +1112,12 @@
 			path = "Vendor/Google Analytics";
 			sourceTree = "<group>";
 		};
-		34A15BFD16C058EB00081135 /* Harpy */ = {
+		34C762321753ED11003DA830 /* Harpy */ = {
 			isa = PBXGroup;
 			children = (
-				34A15BFE16C058EB00081135 /* Harpy.h */,
-				34A15BFF16C058EB00081135 /* Harpy.m */,
-				34A15C0016C058EB00081135 /* HarpyConstants.h */,
+				34C762331753ED11003DA830 /* Harpy.bundle */,
+				34C762341753ED11003DA830 /* Harpy.h */,
+				34C762351753ED11003DA830 /* Harpy.m */,
 			);
 			name = Harpy;
 			path = Vendor/Harpy/Harpy;
@@ -1598,6 +1599,7 @@
 				3434628716E807170051E557 /* KMCommentHelpView.xib in Resources */,
 				3434629216E807400051E557 /* 09-chat-2-white.png in Resources */,
 				3434629316E807400051E557 /* 09-chat-2-white@2x.png in Resources */,
+				34C762361753ED11003DA830 /* Harpy.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1687,7 +1689,6 @@
 				3436387916B88C64009DA634 /* UIView+SMFrameAdditions.m in Sources */,
 				34516CF916BEE6C400CA5878 /* HTAutocompleteTextField.m in Sources */,
 				34516D0816BEE8D700CA5878 /* HTAutocompleteManager.m in Sources */,
-				34A15C0116C058EB00081135 /* Harpy.m in Sources */,
 				3447E71A16C99F7D0055FE6F /* UIView+KMWordPress.m in Sources */,
 				3434182F16CC3BED008646C7 /* KMPostHelpView.m in Sources */,
 				3434184316CC488F008646C7 /* KMSettingsViewController.m in Sources */,
@@ -1707,6 +1708,7 @@
 				3488018F16E68045002238FF /* KMPullToRefreshContentView.m in Sources */,
 				3434623916E7D9340051E557 /* GTMNSString+HTML.m in Sources */,
 				3434628816E807170051E557 /* KMCommentHelpView.m in Sources */,
+				34C762371753ED11003DA830 /* Harpy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
