@@ -33,8 +33,6 @@
 		3434629316E807400051E557 /* 09-chat-2-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3434629116E807400051E557 /* 09-chat-2-white@2x.png */; };
 		3436387916B88C64009DA634 /* UIView+SMFrameAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436387816B88C64009DA634 /* UIView+SMFrameAdditions.m */; };
 		3439727616AC908C00D5C1D3 /* libraries.html in Resources */ = {isa = PBXBuildFile; fileRef = 3439727516AC908C00D5C1D3 /* libraries.html */; };
-		3443BF3B16DA502E00F642BE /* BButton+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 3443BF3816DA502E00F642BE /* BButton+FontAwesome.m */; };
-		3443BF3C16DA502E00F642BE /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3443BF3A16DA502E00F642BE /* BButton.m */; };
 		3447E71A16C99F7D0055FE6F /* UIView+KMWordPress.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447E71916C99F7D0055FE6F /* UIView+KMWordPress.m */; };
 		34516CF916BEE6C400CA5878 /* HTAutocompleteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 34516CE816BEE6C400CA5878 /* HTAutocompleteTextField.m */; };
 		34516D0816BEE8D700CA5878 /* HTAutocompleteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34516D0616BEE8D700CA5878 /* HTAutocompleteManager.m */; };
@@ -130,6 +128,10 @@
 		34C762521753EFA7003DA830 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C762471753EFA7003DA830 /* AFURLConnectionOperation.m */; };
 		34C762531753EFA7003DA830 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C762491753EFA7003DA830 /* AFXMLRequestOperation.m */; };
 		34C762541753EFA7003DA830 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C7624B1753EFA7003DA830 /* UIImageView+AFNetworking.m */; };
+		34C7625F17540009003DA830 /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C7625817540009003DA830 /* BButton.m */; };
+		34C7626017540009003DA830 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C7625A17540009003DA830 /* NSString+FontAwesome.m */; };
+		34C7626117540009003DA830 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34C7625C17540009003DA830 /* FontAwesome.ttf */; };
+		34C7626217540009003DA830 /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C7625E17540009003DA830 /* UIColor+BButton.m */; };
 		34D46677166BE51E0039181E /* KMSubmitTipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D46676166BE51E0039181E /* KMSubmitTipViewController.m */; };
 		34D4667A166BE5690039181E /* KMTextfieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D46679166BE5690039181E /* KMTextfieldCell.m */; };
 		34D4667F166BFA810039181E /* KMTextviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D4667E166BFA810039181E /* KMTextviewCell.m */; };
@@ -309,10 +311,6 @@
 		3436387716B88C64009DA634 /* UIView+SMFrameAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SMFrameAdditions.h"; sourceTree = "<group>"; };
 		3436387816B88C64009DA634 /* UIView+SMFrameAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SMFrameAdditions.m"; sourceTree = "<group>"; };
 		3439727516AC908C00D5C1D3 /* libraries.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = libraries.html; sourceTree = "<group>"; };
-		3443BF3716DA502E00F642BE /* BButton+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BButton+FontAwesome.h"; sourceTree = "<group>"; };
-		3443BF3816DA502E00F642BE /* BButton+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BButton+FontAwesome.m"; sourceTree = "<group>"; };
-		3443BF3916DA502E00F642BE /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
-		3443BF3A16DA502E00F642BE /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BButton.m; sourceTree = "<group>"; };
 		3447E71816C99F7D0055FE6F /* UIView+KMWordPress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+KMWordPress.h"; path = "Categories/UIView+KMWordPress.h"; sourceTree = "<group>"; };
 		3447E71916C99F7D0055FE6F /* UIView+KMWordPress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+KMWordPress.m"; path = "Categories/UIView+KMWordPress.m"; sourceTree = "<group>"; };
 		34516CE716BEE6C400CA5878 /* HTAutocompleteTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAutocompleteTextField.h; sourceTree = "<group>"; };
@@ -521,6 +519,13 @@
 		34C762491753EFA7003DA830 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		34C7624A1753EFA7003DA830 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		34C7624B1753EFA7003DA830 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		34C7625717540009003DA830 /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
+		34C7625817540009003DA830 /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BButton.m; sourceTree = "<group>"; };
+		34C7625917540009003DA830 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		34C7625A17540009003DA830 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		34C7625C17540009003DA830 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		34C7625D17540009003DA830 /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
+		34C7625E17540009003DA830 /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
 		34D46675166BE51E0039181E /* KMSubmitTipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMSubmitTipViewController.h; path = ViewControllers/KMSubmitTipViewController.h; sourceTree = "<group>"; };
 		34D46676166BE51E0039181E /* KMSubmitTipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KMSubmitTipViewController.m; path = ViewControllers/KMSubmitTipViewController.m; sourceTree = "<group>"; };
 		34D46678166BE5690039181E /* KMTextfieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMTextfieldCell.h; path = Views/KMTextfieldCell.h; sourceTree = "<group>"; };
@@ -729,18 +734,6 @@
 			);
 			name = Additions;
 			path = Vendor/Additions;
-			sourceTree = "<group>";
-		};
-		3443BF3616DA502E00F642BE /* BButton */ = {
-			isa = PBXGroup;
-			children = (
-				3443BF3716DA502E00F642BE /* BButton+FontAwesome.h */,
-				3443BF3816DA502E00F642BE /* BButton+FontAwesome.m */,
-				3443BF3916DA502E00F642BE /* BButton.h */,
-				3443BF3A16DA502E00F642BE /* BButton.m */,
-			);
-			name = BButton;
-			path = Vendor/BButton/BButton;
 			sourceTree = "<group>";
 		};
 		34516CCE16BEE6C400CA5878 /* HTAutocompleteTextField */ = {
@@ -1029,7 +1022,7 @@
 				34C762381753EFA7003DA830 /* AFNetworking */,
 				34E5F0A016A8B8DD001FC7E0 /* AJNotificationView */,
 				3455008A16D8EF7000808CAA /* Appirater */,
-				3443BF3616DA502E00F642BE /* BButton */,
+				34C7625617540009003DA830 /* BButton */,
 				347B2545166BADF40039A8D6 /* Facebook */,
 				349A3F5A16D57898007F1382 /* Google Analytics */,
 				3460D05716D95238009657C9 /* google-toolbox-for-mac */,
@@ -1148,6 +1141,29 @@
 			);
 			name = AFNetworking;
 			path = Vendor/AFNetworking/AFNetworking;
+			sourceTree = "<group>";
+		};
+		34C7625617540009003DA830 /* BButton */ = {
+			isa = PBXGroup;
+			children = (
+				34C7625717540009003DA830 /* BButton.h */,
+				34C7625817540009003DA830 /* BButton.m */,
+				34C7625917540009003DA830 /* NSString+FontAwesome.h */,
+				34C7625A17540009003DA830 /* NSString+FontAwesome.m */,
+				34C7625B17540009003DA830 /* resources */,
+				34C7625D17540009003DA830 /* UIColor+BButton.h */,
+				34C7625E17540009003DA830 /* UIColor+BButton.m */,
+			);
+			name = BButton;
+			path = Vendor/BButton/BButton;
+			sourceTree = "<group>";
+		};
+		34C7625B17540009003DA830 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				34C7625C17540009003DA830 /* FontAwesome.ttf */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		34D57190167FCF3C002B7B2B /* Classes */ = {
@@ -1600,6 +1616,7 @@
 				3434629216E807400051E557 /* 09-chat-2-white.png in Resources */,
 				3434629316E807400051E557 /* 09-chat-2-white@2x.png in Resources */,
 				34C762361753ED11003DA830 /* Harpy.bundle in Resources */,
+				34C7626117540009003DA830 /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1692,8 +1709,6 @@
 				345F6E7D16D6EEB9005102D3 /* SSPullToRefreshView.m in Sources */,
 				345500AB16D8EF7000808CAA /* Appirater.m in Sources */,
 				3460D44816D9523A009657C9 /* GTMUIImage+Resize.m in Sources */,
-				3443BF3B16DA502E00F642BE /* BButton+FontAwesome.m in Sources */,
-				3443BF3C16DA502E00F642BE /* BButton.m in Sources */,
 				3475090716E529B000DFD620 /* KMAppDelegate.m in Sources */,
 				3475090C16E529D900DFD620 /* main.m in Sources */,
 				3488018F16E68045002238FF /* KMPullToRefreshContentView.m in Sources */,
@@ -1709,6 +1724,9 @@
 				34C762521753EFA7003DA830 /* AFURLConnectionOperation.m in Sources */,
 				34C762531753EFA7003DA830 /* AFXMLRequestOperation.m in Sources */,
 				34C762541753EFA7003DA830 /* UIImageView+AFNetworking.m in Sources */,
+				34C7625F17540009003DA830 /* BButton.m in Sources */,
+				34C7626017540009003DA830 /* NSString+FontAwesome.m in Sources */,
+				34C7626217540009003DA830 /* UIColor+BButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
