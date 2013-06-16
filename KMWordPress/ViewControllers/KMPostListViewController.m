@@ -288,7 +288,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
-        
+    
+    if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:[KMLoadMoreCell class]])
+    {
+        return;
+    }
+    
     KMPostViewController *detailViewController = [[KMPostViewController alloc] initWithDataSource:self.dataSource withStartIndex:indexPath.row];
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
