@@ -326,7 +326,7 @@
 {
     if ([self.dataSource.items count] > 1)
     {
-        if (self.index > 0)
+        if ((self.index > 0) && (self.index < [self.dataSource.items count]))
         {
             return YES;
         }
