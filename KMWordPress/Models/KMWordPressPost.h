@@ -38,6 +38,7 @@
 @property (strong, nonatomic) NSString *nextUrl;
 @property (strong, nonatomic) NSString *previousTitle;
 @property (strong, nonatomic) NSString *nextTitle;
+@property (strong, nonatomic) NSString *postHtml;
 
 + (KMWordPressPost *)instanceFromDictionary:(NSDictionary *)aDictionary;
 
@@ -50,4 +51,5 @@
 - (NSString *)formattedDate;
 - (NSString *)relativeDate;
 - (void)addComment:(KMWordPressPostComment *)comment;
+- (NSString *)generateHtml:(int)fontSize;
 @end

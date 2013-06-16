@@ -40,6 +40,9 @@
 @property (assign, nonatomic) CGFloat fontSize;
 
 @property (strong, nonatomic) UIBarButtonItem *makeCommentButton;
+
+@property (nonatomic, strong) UIWebView *nextWebView;
+@property (nonatomic, strong) UIWebView *previousWebView;
 @end
 
 @implementation KMPostViewController
@@ -401,60 +404,7 @@
 {
     [self.webView stopLoading];
     
-    NSMutableString* postHtml = @"".mutableCopy;
-    
-    [postHtml appendFormat:@"<html><head><script type=\"text/javascript\" src=\"kmwordpress.js\"></script>"];
-    
-    [postHtml appendFormat:@"<style>#singlentry {font-size: %fpx;}</style><link href='default.css' rel='stylesheet' type='text/css' />", self.fontSize];
-    
-    [postHtml appendFormat:@"</head><body id=\"contentbody\"><div id='maincontent' class='content'><div class='post'><div id='title'>%@</div><div><span class='date-color'>%@</span>&nbsp;<a class='author' href=\"kmwordpress://author:%@\">%@</a></div>",
-     self.post.title,
-     [self.post formattedDate],
-     self.post.author.kMWordPressPostAuthorId,
-     self.post.author.name];
-    /*
-    if ([self.post isPhotogallery])
-    {
-        [postHtml appendString:@"<div><a href=\"kmwordpress://showGallery\">View Photogallery</a></div>"];
-    }
-    */
-    [postHtml appendFormat:@"<div id='singlentry'>%@</div></div>", self.post.content];
-    
-    if ([self.post.categories count])
-    {
-        [postHtml appendString:@"<div>"];
-        
-        for (KMWordPressCategory *item in self.post.categories)
-        {
-            [postHtml appendFormat:@"<a class=\"category\" href=\"kmwordpress://category:%@\">%@</a> ", item.kMWordPressCategoryId, item.title];
-        }
-        
-        [postHtml appendString:@"</div>"];
-    }
-    
-    if ([self.post.tags count])
-    {
-        [postHtml appendString:@"<div style=\"clear:both\">"];
-        
-        for (KMWordPressTag *item in self.post.tags)
-        {
-            [postHtml appendFormat:@"<a class=\"tag\" href=\"kmwordpress://tag:%@\">%@</a>", item.kMWordPressTagId, item.title];
-        }
-        
-        [postHtml appendString:@"</div>"];
-    }
-    
-    if (([postHtml rangeOfString:@"twitter-tweet"].location != NSNotFound) && ([postHtml rangeOfString:@"widgets.js"].location == NSNotFound))
-    {
-       [postHtml appendString:@"<script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>"]; 
-    }
-    
-    postHtml = [postHtml stringByReplacingOccurrencesOfString:@"\"//platform.twitter.com/"
-                                                   withString:@"\"http://platform.twitter.com/"].mutableCopy;
-    
-    [postHtml appendString:@"</div></body></html>"];
-    
-    [self.webView loadHTMLString:postHtml baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+    [self.webView loadHTMLString:[self.post generateHtml:self.fontSize] baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
     
     self.buttonControl.post = self.post;
     
@@ -544,6 +494,8 @@
     if ([self canLoadNext])
     {
         self.nextTitleLabel.text = [((KMWordPressPost *)self.dataSource.items[(self.index - 1)]).titlePlain stringByReplacingHTMLEntities];
+        
+        [((KMWordPressPost *)self.dataSource.items[(self.index - 1)]) generateHtml:self.fontSize];
     }
     else
     {
@@ -555,6 +507,8 @@
         if ((self.index + 1) < [self.dataSource.items count])
         {
             self.previousTitleLabel.text = [((KMWordPressPost *)self.dataSource.items[(self.index + 1)]).titlePlain stringByReplacingHTMLEntities];
+            
+            [((KMWordPressPost *)self.dataSource.items[(self.index + 1)]) generateHtml:self.fontSize];
         }
         else if (self.post.previousTitle)
         {
