@@ -76,6 +76,7 @@ float const childIndent = 15.0f;
     self.commentDate.text = nil;
     
     self.comment = nil;
+    self.commentBody.attributedString = nil;
     self.commentBody.frame = CGRectMake(10.0f, 58.0f, 300.0f, 25.0f);
 }
 
