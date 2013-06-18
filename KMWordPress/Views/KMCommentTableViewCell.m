@@ -24,13 +24,9 @@ float const childIndent = 15.0f;
 @property (strong, nonatomic) IBOutlet UILabel *username;
 @property (strong, nonatomic) IBOutlet UILabel *commentDate;
 
-@property (nonatomic, strong) NSAttributedString *attributedString;
-@property (strong, nonatomic) IBOutlet DTAttributedTextContentView *commentBody;
 @property (strong, nonatomic) IBOutlet UIButton *replyButton;
 
 @property (strong, nonatomic) KMWordPressPostComment* comment;
-
-@property (assign, nonatomic) CGFloat neededHeight;
 
 - (IBAction)replyAction:(id)sender;
 
@@ -43,15 +39,9 @@ float const childIndent = 15.0f;
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        self.hasFixedRowHeight = NO;
     }
     return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)awakeFromNib
@@ -60,6 +50,9 @@ float const childIndent = 15.0f;
     self.avatar.layer.borderWidth = 1.0f;
     self.avatar.layer.cornerRadius = 4.0f;
     self.avatar.clipsToBounds = YES;
+    
+    [self.contentView addSubview:self.attributedTextContextView];
+    self.attributedTextContextView.delegate = self;
     
     UISwipeGestureRecognizer *leftswipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                                     action:@selector(replyAction:)];
@@ -76,8 +69,7 @@ float const childIndent = 15.0f;
     self.commentDate.text = nil;
     
     self.comment = nil;
-    self.commentBody.attributedString = nil;
-    self.commentBody.frame = CGRectMake(10.0f, 58.0f, 300.0f, 25.0f);
+    self.attributedTextContextView.frame = CGRectMake(10.0f, 58.0f, 300.0f, 25.0f);
 }
 
 - (void)showComment:(KMWordPressPostComment *)comment
@@ -92,8 +84,6 @@ float const childIndent = 15.0f;
         [self.avatar setImageWithURL:[NSURL URLWithString:comment.avatar]
                     placeholderImage:[UIImage imageNamed:@"default-user.png"]];
     }
-    
-    self.commentBody.delegate = self;
 
     [self setHTMLString:comment.content];
 }
@@ -112,26 +102,30 @@ float const childIndent = 15.0f;
     self.username.frame = CGRectMake(60.0f + offset, 10.0f, 210.0f - offset, 21.0f);
     self.commentDate.frame = CGRectMake(60.0f + offset, 29.0f, 210.0f - offset, 21.0f);
     
-	CGSize neededSize = [self.commentBody suggestedFrameSizeToFitEntireStringConstraintedToWidth:allowedContentSize - offset];
+	CGSize neededSize = [self.attributedTextContextView suggestedFrameSizeToFitEntireStringConstraintedToWidth:allowedContentSize - offset];
 	// after the first call here the content view size is correct
 	CGRect frame = CGRectMake(10.0f + offset, 58.0f, allowedContentSize - offset, neededSize.height);
 	
-	if ((self.commentBody.frame.size.height != frame.size.height)
-        || (self.commentBody.frame.size.width != frame.size.width))
+	if ((self.attributedTextContextView.frame.size.height != frame.size.height)
+        || (self.attributedTextContextView.frame.size.width != frame.size.width))
 	{
-		self.commentBody.frame = frame;
+		self.attributedTextContextView.frame = frame;
 	}
 }
 
 - (CGFloat)requiredRowHeightInTableView:(UITableView *)tableView
 {
+	if (self.hasFixedRowHeight)
+	{
+		NSLog(@"Warning: you are calling %s even though the cell is configured with fixed row height", (const char *)__PRETTY_FUNCTION__);
+	}
+	
 	CGFloat contentWidth = tableView.frame.size.width;
-
+	
 	// reduce width for accessories
 	switch (self.accessoryType)
 	{
 		case UITableViewCellAccessoryDisclosureIndicator:
-            //break;
 		case UITableViewCellAccessoryCheckmark:
 			contentWidth -= 20.0f;
 			break;
@@ -145,11 +139,10 @@ float const childIndent = 15.0f;
 	// reduce width for grouped table views
 	if (tableView.style == UITableViewStyleGrouped)
 	{
-		contentWidth -= 20.0f;
+		// left and right 10 px margins on grouped table views
+		contentWidth -= 20;
 	}
 	
-    contentWidth -= 20.0f;
-    
     if ([self.comment.parent intValue])
     {
         CGFloat offset = ([self.comment.parent intValue]) ? childIndent : 0;
@@ -159,10 +152,13 @@ float const childIndent = 15.0f;
         contentWidth -= offset;
     }
     
-	CGSize neededSize = [self.commentBody suggestedFrameSizeToFitEntireStringConstraintedToWidth:contentWidth];
+    //Left and right indent
+    contentWidth -= 20.0f;
     
+	CGSize neededSize = [self.attributedTextContextView suggestedFrameSizeToFitEntireStringConstraintedToWidth:contentWidth];
+	
 	// note: non-integer row heights caused trouble < iOS 5.0
-	return 58.0f + neededSize.height + 10.0f;
+    return 58.0f + neededSize.height + 10.0f;
 }
 
 - (void)setHTMLString:(NSString *)html
@@ -179,22 +175,13 @@ float const childIndent = 15.0f;
 	
 	NSData *data = [html dataUsingEncoding:NSUTF8StringEncoding];
     
-    NSDictionary *options = @{NSTextSizeMultiplierDocumentOption : @1.3, DTDefaultFontFamily : @"Helvetica"}; //[NSDictionary dictionaryWithObjectsAndKeys:@1.7, NSTextSizeMultiplierDocumentOption, nil];
+    NSDictionary *options = @{NSTextSizeMultiplierDocumentOption : @1.3, DTDefaultFontFamily : @"Helvetica"}; 
     
 	NSAttributedString *string = [[NSAttributedString alloc] initWithHTMLData:data options:options documentAttributes:NULL];
 
 	self.attributedString = string;
-}
-
-- (void)setAttributedString:(NSAttributedString *)attributedString
-{
-	if (_attributedString != attributedString)
-	{
-		_attributedString = attributedString;
-		
-		// passthrough
-		self.commentBody.attributedString = _attributedString;
-	}
+    
+    [self setNeedsLayout];
 }
 
 - (UIView *)attributedTextContentView:(DTAttributedTextContentView *)attributedTextContentView viewForAttributedString:(NSAttributedString *)string frame:(CGRect)frame

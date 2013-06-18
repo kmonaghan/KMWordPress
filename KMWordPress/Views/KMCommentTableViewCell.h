@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DTAttributedTextCell.h"
 
 @class KMWordPressPostComment;
 
-@interface KMCommentTableViewCell : UITableViewCell <DTAttributedTextContentViewDelegate>
+@interface KMCommentTableViewCell : DTAttributedTextCell <DTAttributedTextContentViewDelegate>
 @property(weak, nonatomic) KMCommentListViewController *parentViewController;
 - (void)showComment:(KMWordPressPostComment *)comment;
-- (CGFloat)requiredRowHeightInTableView:(UITableView *)tableView;
+
 @end

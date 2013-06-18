@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12C3006</string>
+		<string key="IBDocument.SystemVersion">12E55</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.39</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">2083</string>
@@ -16,7 +16,6 @@
 			<string>IBUIImageView</string>
 			<string>IBUILabel</string>
 			<string>IBUITableViewCell</string>
-			<string>IBUIView</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -120,23 +119,13 @@
 									<int key="NSfFlags">16</int>
 								</object>
 							</object>
-							<object class="IBUIView" id="951928206">
-								<reference key="NSNextResponder" ref="223032812"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{10, 58}, {300, 21}}</string>
-								<reference key="NSSuperview" ref="223032812"/>
-								<reference key="NSWindow"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<reference key="IBUIBackgroundColor" ref="293613250"/>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							</object>
 							<object class="IBUIButton" id="966596133">
 								<reference key="NSNextResponder" ref="223032812"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{276, -1}, {44, 44}}</string>
 								<reference key="NSSuperview" ref="223032812"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="951928206"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -221,14 +210,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">commentBody</string>
-						<reference key="source" ref="121019975"/>
-						<reference key="destination" ref="951928206"/>
-					</object>
-					<int key="connectionID">16</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">replyButton</string>
 						<reference key="source" ref="121019975"/>
 						<reference key="destination" ref="966596133"/>
@@ -272,7 +253,6 @@
 							<reference ref="640266374"/>
 							<reference ref="966596133"/>
 							<reference ref="259603544"/>
-							<reference ref="951928206"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -293,11 +273,6 @@
 						<reference key="parent" ref="121019975"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">15</int>
-						<reference key="object" ref="951928206"/>
-						<reference key="parent" ref="121019975"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
 						<reference key="object" ref="966596133"/>
 						<reference key="parent" ref="121019975"/>
@@ -309,8 +284,6 @@
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="15.CustomClassName">DTAttributedTextContentView</string>
-				<string key="15.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="17.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="2.CustomClassName">KMCommentTableViewCell</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -326,27 +299,27 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
-					<string key="className">DTAttributedTextContentView</string>
-					<string key="superclassName">UIView</string>
+					<string key="className">DTAttributedTextCell</string>
+					<string key="superclassName">UITableViewCell</string>
 					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">delegate</string>
+						<string key="NS.key.0">textDelegate</string>
 						<string key="NS.object.0">id</string>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">delegate</string>
+						<string key="NS.key.0">textDelegate</string>
 						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">delegate</string>
+							<string key="name">textDelegate</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/DTAttributedTextContentView.h</string>
+						<string key="minorKey">./Classes/DTAttributedTextCell.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">KMCommentTableViewCell</string>
-					<string key="superclassName">UITableViewCell</string>
+					<string key="superclassName">DTAttributedTextCell</string>
 					<object class="NSMutableDictionary" key="actions">
 						<string key="NS.key.0">replyAction:</string>
 						<string key="NS.object.0">id</string>
@@ -360,7 +333,6 @@
 					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="avatar">UIImageView</string>
-						<string key="commentBody">DTAttributedTextContentView</string>
 						<string key="commentDate">UILabel</string>
 						<string key="replyButton">UIButton</string>
 						<string key="username">UILabel</string>
@@ -369,10 +341,6 @@
 						<object class="IBToOneOutletInfo" key="avatar">
 							<string key="name">avatar</string>
 							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="commentBody">
-							<string key="name">commentBody</string>
-							<string key="candidateClassName">DTAttributedTextContentView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="commentDate">
 							<string key="name">commentDate</string>
