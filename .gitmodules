@@ -40,3 +40,6 @@
 [submodule "KMWordPress/Vendor/DTCoreText"]
 	path = KMWordPress/Vendor/DTCoreText
 	url = https://github.com/Cocoanetics/DTCoreText.git
+[submodule "KMWordPress/Vendor/Nimbus"]
+	path = KMWordPress/Vendor/Nimbus
+	url = https://github.com/jverkoey/nimbus.git
