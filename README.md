@@ -1,3 +1,6 @@
+# DEPRECIATED
+Use [CBPWordPress](https://github.com/kmonaghan/CBPWordPress) instead.
+
 KMWordPress
 ===========
 
